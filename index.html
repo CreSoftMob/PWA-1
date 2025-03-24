@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="/manifest.json">
+  <title>Meu PWA</title>
+  <link rel="icon" href="icons/1.jpeg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bem-vindo ao Meu PWA!</h1>
+  <p>Este é um exemplo de Progressive Web App.</p>
+
+
+  <script>
+    // Verificando se o browser suporta Service Workers
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registrado com sucesso: ', registration);
+          })
+          .catch((error) => {
+            console.log('Erro ao registrar o Service Worker: ', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
