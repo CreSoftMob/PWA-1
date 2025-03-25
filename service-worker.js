@@ -1,5 +1,6 @@
 const CACHE_NAME = 'meu-pwa-cache-v1';
 const urlsToCache = [
+  '/',
   '/index.html',
   '/styles.css',
   '/icons/1.jpeg', // Removido duplicado
