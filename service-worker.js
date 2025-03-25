@@ -1,9 +1,9 @@
 const CACHE_NAME = 'meu-pwa-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/styles.css',
-  '/icons/1.jpeg', // Removido duplicado
+  'PWA-1/index.html',
+  'PWA-1/styles.css',
+  'PWA-1/icons/1.jpeg', // Removido duplicado
 ];
 
 // Instalando o Service Worker
@@ -54,7 +54,7 @@ self.addEventListener('fetch', (event) => {
       })
       .catch((error) => {
         console.log('Erro ao buscar do cache ou fazer requisição:', error);
-        return caches.match('/index.html'); // Retorna uma página de fallback caso falhe
+        return caches.match('PWA-1/index.html'); // Retorna uma página de fallback caso falhe
       })
   );
 });
