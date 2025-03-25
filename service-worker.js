@@ -6,6 +6,7 @@ const urlsToCache = [
   '/icons/1.jpeg',
   '/manifest.json',
   '/offline.html', // Adicionando a página offline ao cache
+
 ];
 
 // Instalando o Service Worker
@@ -53,9 +54,11 @@ self.addEventListener('fetch', (event) => {
             return response;
           });
       })
+
       .catch(() => {
         console.log('Erro ao buscar o recurso, usando fallback.');
         return caches.match('/offline.html'); // Retorna a página offline caso ocorra erro
+
       })
   );
 });
